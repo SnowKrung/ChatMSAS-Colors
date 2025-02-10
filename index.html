@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatMSAS All About Colors</title>
+    <style>
+        body {
+            font-family: 'Arial', cursive, sans-serif;
+            background: linear-gradient(45deg, #ff0000, #ff7300, #ffeb00, #00ff00, #0099ff, #7d00ff, #ff00aa);
+            background-size: 400% 400%;
+            animation: rainbowBG 10s infinite linear;
+            text-align: center;
+            padding: 50px;
+            color: white;
+            position: relative;
+        }
+
+        @keyframes rainbowBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .container {
+            width: 60%;
+            max-width: 800px;
+            background: white; 
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: block;
+            margin: 0 auto;
+        }
+        h1 {
+            color: black;
+        }
+        p {
+            color: grey;
+        }
+        .description {
+            text-align: left;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+            margin: 20px 0;
+        }
+        .description h2 {
+            color: black;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .description p {
+            font-size: 14px;
+            color: black;
+            line-height: 1.5;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            color: white;
+            background: darkgray;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background: gray;
+            transform: scale(1.05);
+        }
+        .chatbot-container {
+            width: 80%;
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 12px;
+            background: #1a1a1a;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            display: none;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        iframe {
+            width: 100%;
+            border: none;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const button = document.getElementById("showChatbot");
+            const chatbotContainer = document.getElementById("chatbotContainer");
+
+            function adjustHeight() {
+                chatbotContainer.style.height = window.innerHeight * 0.7 + "px"; // 70% of viewport height
+            }
+
+            button.addEventListener("click", function() {
+                if (chatbotContainer.style.display === "none" || chatbotContainer.style.display === "") {
+                    chatbotContainer.style.display = "block";
+                    setTimeout(() => {
+                        chatbotContainer.style.opacity = "1";
+                        chatbotContainer.style.transform = "translateY(0)";
+                    }, 10);
+                    adjustHeight();
+                    button.textContent = "Close Chatbot";
+                } else {
+                    chatbotContainer.style.opacity = "0";
+                    chatbotContainer.style.transform = "translateY(-10px)";
+                    setTimeout(() => {
+                        chatbotContainer.style.display = "none";
+                    }, 300);
+                    button.textContent = "Open Chatbot";
+                }
+            });
+
+            window.addEventListener("resize", adjustHeight);
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>ChatMSAS All About Colors!</h1>
+        <p>Ask away with MSAS (Miki ShAya Shell) .</p>
+        
+         <!-- Description Section -->
+         <div class="description">
+            <h2>About This Chatbot</h2>
+            <p>
+                
+            </p>
+            <p>
+                <strong>Who can use it?</strong> Anyone and everyone of all ages. Those who wish
+                to learn information about colors, their meanings, and so much more!
+            </p>
+            <p>
+                <strong>How does it work?</strong> Simply open the chatbot and ask any questions related to Colors. 
+                Then this chatbot will provide instant responses based on general information from multiple sources.
+            </p>
+        </div>
+
+        <button id="showChatbot">Open Chatbot</button>
+
+<!-- Special Thanks to my Best Friend and Partner, Allan Jay Lugtu, for teaching me how to create and use this code. -->
+
+        <div class="chatbot-container" id="chatbotContainer">
+            <iframe
+                src="https://www.chatbase.co/chatbot-iframe/E3m-J6i1Y9iFqkM6fu8om"
+                width="100%"
+                style="height: 100%; min-height: 700px"
+                frameborder="0" 
+            ></iframe>
+        </div>
+    </div>
+</body>
+</html>
